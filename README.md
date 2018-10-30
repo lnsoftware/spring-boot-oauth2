@@ -1,5 +1,12 @@
 [![Build Status](https://secure.travis-ci.org/rajithd/spring-boot-oauth2.png)](http://travis-ci.org/rajithd/spring-boot-oauth2)
 
+# 对之前内容补充
+
+```java
+下面是存放到内存中，如果是存放到数据库中，请参考
+http://www.cnblogs.com/charlypage/p/9383420.html
+```
+
 # Build and Run
 ```java
 mvn clean install -DskipTests spring-boot:run
