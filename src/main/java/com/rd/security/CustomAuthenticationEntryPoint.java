@@ -12,7 +12,7 @@ import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
 /**
- * Returns a 401 error code (Unauthorized) to the client.
+ * 配置如果没有权限, 访问接口时我们返回的错误码以及错误内容
  */
 @Component
 public class CustomAuthenticationEntryPoint implements AuthenticationEntryPoint {

@@ -15,7 +15,7 @@ import java.io.IOException;
 
 
 /**
- * Spring Security logout handler
+ * 推出登陆成功后处理器
  */
 @Component
 public class CustomLogoutSuccessHandler
