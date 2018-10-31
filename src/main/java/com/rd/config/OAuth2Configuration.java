@@ -39,6 +39,7 @@ import javax.sql.DataSource;
 /**
  * OAuth2配置 目前是基于内存的演示【可以修改成基于数据库的】
  * 参考：https://blog.csdn.net/wuzhiwei549/article/details/79815491
+ *      http://www.cnblogs.com/charlypage/p/9383420.html
  */
 @Configuration
 public class OAuth2Configuration {
@@ -209,7 +210,9 @@ public class OAuth2Configuration {
          */
         @Override
         public void configure(ClientDetailsServiceConfigurer clients) throws Exception {
+            // 1. 数据库方式
 //          clients.withClientDetails(clientDetails());
+            // 2. 基于内存的方式
             clients
                     .inMemory()
                     .withClient(propertyResolver.getProperty(PROP_CLIENTID))
@@ -220,6 +223,11 @@ public class OAuth2Configuration {
                     .accessTokenValiditySeconds(propertyResolver.getProperty(PROP_TOKEN_VALIDITY_SECONDS, Integer.class, 1800));
         }
 
+        /**
+         * 读取配置文件
+         *
+         * @param environment
+         */
         @Override
         public void setEnvironment(Environment environment) {
             this.propertyResolver = new RelaxedPropertyResolver(environment, ENV_OAUTH);
